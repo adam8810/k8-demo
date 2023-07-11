@@ -5,7 +5,7 @@
 
 # Requirements
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- Install [minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 # Usage
 1. In a terminal run `minikube start` and wait for the cluster to start
