@@ -7,7 +7,7 @@ metadata:
   labels:
     app: device
 spec:
-  replicas: 10 
+  replicas: 10 # Adjust
   selector:
     matchLabels:
       app: device
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: device
-        image: nginx:1.14.2
+        image: nginx:1.14.2 # Adjust
         ports:
         - containerPort: 80
 ---
@@ -30,7 +30,7 @@ metadata:
   labels:
     app: sensor
 spec:
-  replicas: 1
+  replicas: 1 # Adjust
   selector:
     matchLabels:
       app: sensor
@@ -41,6 +41,6 @@ spec:
     spec:
       containers:
       - name: device
-        image: nginx:1.14.2
+        image: nginx:1.14.2 # Adjust
         ports:
         - containerPort: 80
