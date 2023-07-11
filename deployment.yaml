@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: device
+  namespace: demo-dev
+  labels:
+    app: device
+spec:
+  replicas: 10 
+  selector:
+    matchLabels:
+      app: device
+  template:
+    metadata:
+      labels:
+        app: device
+    spec:
+      containers:
+      - name: device
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sensor
+  namespace: demo-dev
+  labels:
+    app: sensor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sensor
+  template:
+    metadata:
+      labels:
+        app: sensor
+    spec:
+      containers:
+      - name: device
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
